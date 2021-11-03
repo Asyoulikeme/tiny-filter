@@ -1,0 +1,193 @@
+*{
+  box-sizing: border-box;
+}
+.amazing-filter-wrapper {
+  background-color: #ffffff;
+  width: 100%;
+  //padding: 0 0 5px 0 !important;
+}
+
+.need-wrapper{
+  background-clip: content-box;
+  *border-radius: 4px;
+  margin: 10px 0 5px 0;
+  border: 1px solid #eaeaea;
+  position: relative;
+}
+.amazing-filter-wrapper.need-wrapper::before{
+  content: "信息查询";
+  padding: 2px 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%) translateX(12px);
+  background: #ffffff;
+  color: #333333;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+}
+.amazing-filter-wrapper .need-error-msg .el-form-item{
+  //border: 1px solid red;
+  margin-bottom: 15px !important;
+}
+.amazing-filter-wrapper .el-form {
+  padding: 10px 0 0 0px;
+  position: relative;
+  width: 100%;
+}
+
+:deep(.el-input .el-input__inner) {
+  width: 190px;
+}
+/* 小化 时间选择器 */
+.shorter-datetime-picker {
+  width: 190px;
+}
+
+/* 将 date类型的 picker 与 input 一样长*/
+.same-width-for-date {
+  width: 190px;
+}
+:deep(.el-date-editor--daterange) {
+  padding: 3px 2px !important;
+  overflow: hidden;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", "微软雅黑", Arial !important;
+  i{
+    background: transparent;
+    font-size: 12px;
+  }
+  i:first-child{
+    padding-left: 5px;
+  }
+  input{
+    font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", "微软雅黑", Arial !important;
+  }
+  > span {
+    background: transparent;
+    //border:1px solid red;
+    padding: 1.5px;
+  }
+}
+:deep(.el-form-item__content) {
+  flex: 1;
+}
+
+:deep(.el-date-editor.el-input),
+:deep(.el-date-editor.el-input__inner){
+  width: 100%;
+}
+
+:deep(.el-checkbox-group){
+  min-height: 28px;
+}
+:deep(.el-checkbox-button.is-focus .el-checkbox-button__inner){
+  border-color:#DCDFE6;
+}
+:deep(.el-checkbox-button.is-checked .el-checkbox-button__inner){
+  border-color:#409EFF !important;
+}
+
+.amazing-filter-wrapper .el-form > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  border: 1px solid transparent;
+  
+}
+.amazing-filter-wrapper .el-form > div:first-child > div {
+  margin-bottom: 10px;
+}
+
+.amazing-filter-wrapper .el-form > div > .el-form-item {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-right: 0;
+   //border: 1px solid red;
+}
+:deep(.el-form-item__label){
+  padding: 0 6px 0 0;
+  //border: 1px solid red;
+}
+.amazing-filter-wrapper .ext-filter-wrapper {
+  //position: absolute;
+  //left: 0;
+  //z-index: 999;
+  box-shadow: 0px 10px 15px -22px rgba(0,0,0,.5);
+  will-change: transform;
+  transition: all .3s cubic-bezier(0.22, 0.5, 0.16, 1.66);
+  //padding: 10px 0 0 0 ;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  :deep(.el-form-item) {
+    margin-bottom: 10px;
+  }
+}
+
+
+/* 展开更多 动画 */
+.flashBounce-enter {
+  opacity: 0.1;
+  transform: translateY(-50%);
+}
+.flashBounce-enter-to {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.flashBounce-leave {
+  opacity: 0;
+  border: none !important;
+  transform: translateY(0%);
+}
+.flashBounce-leave-to {
+  opacity: 0;
+  border: none !important;
+  transform: translateY(-50%);
+}
+
+
+/* 展开更多箭头 动画 */
+.arrow-direction {
+  transform: rotate(90deg);
+}
+.arrow-direction-default {
+  transition: all 0.2s linear;
+}
+
+
+:deep(.el-select__tags){
+  > span:first-child{
+    display: flex;
+  }
+  .el-tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    margin: 2px 0 2px 4px;
+  }
+  .el-tag:not(:first-child){
+    padding-right: 4px;
+    padding-left: 2px;
+  }
+  .el-select__tags-text{
+    display: inline-block;
+    text-align: center;
+    width: 48px !important;
+    //border: 1px solid red;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.el-date-editor--datetimerange{
+  :deep(i.el-input__icon.el-range__close-icon){
+    position: absolute;
+    right: 5px;
+  }
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .box{
+                border: 1px solid red;
+                width: 600px;
+                height: 250px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                align-items: center;
+            }
+            .box .drag-container {
+            
+                width: auto;
+                height: 200px;
+                border: 1px solid blue;
+            
+            }
+            .box .drag-container span{
+                height: 200px;
+                display: inline-block;
+                background: #eaeaea;
+                transition: all .5s ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div id="container1" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <span style="width: 200px;" id="drag1" draggable="true" ondragstart="drag(event)">1</span>
+            </div>
+            <div id="container2" class="drag-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <span style="width: 300px;" id="drag2" draggable="true" ondragstart="drag(event)">2</span>
+            </div>
+        </div>
+        <script>
+            function drop(event){
+                // 原元素
+                const el = document.getElementById(event.dataTransfer.getData("source_el"))
+                // 原元素的容器
+                const container = document.getElementById(event.dataTransfer.getData("source_container"))
+
+                // 当前元素
+                const current = event.target
+                //debugger
+
+                //event.target.parentElement.innerHTML = ""
+                //debugger
+                event.target.parentElement.appendChild(el)
+
+                //container.innerHTML = ""
+                container.appendChild(current)
+            }
+            function allowDrop(event){
+                event.preventDefault()
+            }
+            function drag(ev){
+                ev.dataTransfer.setData("source_el",ev.target.id);
+                
+                ev.dataTransfer.setData("source_container",ev.target.parentElement.id)
+            }
+        </script>
+    </body>
+</html>
